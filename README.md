@@ -30,9 +30,9 @@ If you want to build and use your own local image
 
 ```bash
 # build image locally for Node.JS v8.10
-$ make build LANG=nodejs8.10
+$ make build TAG=nodejs8.10
 # go inside a container instance for the local Node.JS v8.10 image
-$ make shell LANG=nodejs8.10
+$ make shell TAG=nodejs8.10
 ```
 
 ## Example
@@ -47,18 +47,18 @@ $ make shell LANG=nodejs8.10
 2. Build and test locally (test also the apigw example)
 3. Make similar changes to the `Dockerfile`s of the other language runtimes (if applicable)
 4. Commit and push the changes to master
-5. Push the corresponding branch for the runtime with command `$ make push LANG={lang}`
+5. Push the corresponding branch for the runtime with command `$ make tag TAG={lang}`
 6. Go to [hub.docker.com](https://hub.docker.com/r/boomfish/lambda-serverless/)
 7. In `Build Details` tab, you should now see the build for the runtime tag kicking off
 8. Repeat 1-8 for any other language runtimes you wish to test
 
 ### Fix for the current version
 
-1. Do the fixes you want to do `$ make push LANG={lang}`
+1. Do the fixes you want to do `$ make tag TAG={lang}`
 2. Build and test locally (test also the apigw example)
 3. Make similar changes to the `Dockerfile`s of the other language runtimes (if applicable)
 4. Commit and push the changes
-5. Run `$ make push LANG={lang}`
+5. Run `$ make tag TAG={lang}`
 6. Go to [hub.docker.com](https://hub.docker.com/r/boomfish/lambda-serverless/)
 7. In `Build Details` tab, you should now see the build for the runtime tag kicking off
 8. Repeat 1-8 for any other language runtimes you wish to test

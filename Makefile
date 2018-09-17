@@ -1,14 +1,14 @@
 IMAGE_NAME ?= boomfish/lambda-serverless
-LANG ?= nodejs8.10
+TAG ?= nodejs8.10
 
 build:
-	cd $(LANG) && docker build --pull -t $(IMAGE_NAME):$(LANG) .
+	cd $(TAG) && docker build --pull -t $(IMAGE_NAME):$(TAG) .
 
 pull:
-	docker pull $(IMAGE_NAME):$(LANG)
+	docker pull $(IMAGE_NAME):$(TAG)
 
 shell:
-	docker run --rm -it -v $(PWD):/opt/app $(IMAGE_NAME):$(LANG) bash
+	docker run --rm -it -v $(PWD):/opt/app $(IMAGE_NAME):$(TAG) bash
 
-push:
-	git push origin HEAD:refs/heads/$(LANG)
+tag:
+	git push origin HEAD:refs/heads/$(TAG)
