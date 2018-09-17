@@ -90,3 +90,14 @@ These image also add the following:
 
 - [Serverless Framework](https://serverless.com/framework/)
 - [yarn](https://github.com/yarnpkg/yarn) (for Node.js runtimes only)
+
+## Acknowledgements
+
+This is a fork of [amaysim/serverless](https://github.com/amaysim-au/docker-serverless)
+and is intended to be a compatible with it for projects that follow their
+[3 Musketeers](https://3musketeers.io/) methodology for development environments.
+
+Many thanks to [Frederic Lemay](https://github.com/flemay) for creating and sharing the
+3 Musketeers and sharing it at the
+[Sydney Docker User Group](https://www.meetup.com/en-AU/Sydney-Docker-User-Group/) meetup,
+as well as all those to contributed to the project.
