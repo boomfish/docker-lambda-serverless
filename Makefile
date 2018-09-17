@@ -1,18 +1,14 @@
-SERVERLESS_VERSION = 1.30.3
-IMAGE_NAME ?= amaysim/serverless:$(SERVERLESS_VERSION)
-TAG = $(SERVERLESS_VERSION)
+IMAGE_NAME ?= boomfish/lambda-serverless
+LANG ?= nodejs8.10
 
 build:
-	docker build -t $(IMAGE_NAME) .
+	cd $(LANG) && docker build --pull -t $(IMAGE_NAME):$(LANG) .
 
 pull:
-	docker pull $(IMAGE_NAME)
+	docker pull $(IMAGE_NAME):$(LANG)
 
 shell:
-	docker run --rm -it -v $(PWD):/opt/app $(IMAGE_NAME) bash
+	docker run --rm -it -v $(PWD):/opt/app $(IMAGE_NAME):$(LANG) bash
 
-tag:
-	-git tag -d $(TAG)
-	-git push origin :refs/tags/$(TAG)
-	git tag $(TAG)
-	git push origin $(TAG)
+push:
+	git push origin HEAD:refs/heads/$(LANG)
